@@ -94,9 +94,8 @@ pub async fn get_eks_token(input: &GetEKSTokenInput) -> Result<String, GetEKSTok
         std::env::var("AWS_PROFILE").map_err(|_| GetEKSTokenError::ProfileNone)?
     };
 
-    let region = aws_config::Region::new(input.region.clone());
     let shared_config = aws_config::defaults(BehaviorVersion::v2024_03_28())
-        .region(region)
+        .region(aws_config::Region::new(input.region.clone()))
         .profile_name(&profile)
         .load()
         .await;
