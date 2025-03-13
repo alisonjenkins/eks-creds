@@ -22,7 +22,7 @@ jobs:
           rustup component add clippy
 
       - name: Setup sccache
-        uses: mozilla-actions/sccache-action@v0.0.7
+        uses: mozilla-actions/sccache-action@v0.0.8
 
       - name: Clippy
         run: cargo clippy --all
@@ -39,7 +39,7 @@ jobs:
           rustup component add rustfmt --toolchain nightly
 
       - name: Setup sccache
-        uses: mozilla-actions/sccache-action@v0.0.7
+        uses: mozilla-actions/sccache-action@v0.0.8
 
       - name: Rustfmt
         run: cargo +nightly fmt --all -- --check

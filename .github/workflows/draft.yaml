@@ -61,7 +61,7 @@ jobs:
         run: rustup toolchain install stable --profile minimal --target ${{ matrix.target }}
 
       - name: Setup sccache
-        uses: mozilla-actions/sccache-action@v0.0.7
+        uses: mozilla-actions/sccache-action@v0.0.8
 
       - name: Build
         run: ./scripts/build.sh ${{ matrix.target }}
@@ -92,7 +92,7 @@ jobs:
         run: rustup toolchain install stable --profile minimal --target ${{ matrix.target }}
 
       - name: Setup sccache
-        uses: mozilla-actions/sccache-action@v0.0.7
+        uses: mozilla-actions/sccache-action@v0.0.8
 
       - name: Build
         run: cargo build --profile release-windows --locked --target ${{ matrix.target }}
@@ -130,7 +130,7 @@ jobs:
         run: rustup target add ${{ matrix.target }}
 
       - name: Setup sccache
-        uses: mozilla-actions/sccache-action@v0.0.7
+        uses: mozilla-actions/sccache-action@v0.0.8
 
       - name: Build
         run: ./scripts/build.sh ${{ matrix.target }}
