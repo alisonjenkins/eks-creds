@@ -51,7 +51,7 @@ jobs:
       CARGO_TARGET_SPARC64_UNKNOWN_LINUX_GNU_LINKER: sparc64-linux-gnu-gcc
       CARGO_TARGET_S390X_UNKNOWN_LINUX_GNU_LINKER: s390x-linux-gnu-gcc
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install gcc
         if: matrix.gcc != ''
@@ -86,7 +86,7 @@ jobs:
       CARGO_TARGET_X86_64_PC_WINDOWS_MSVC_LINKER: lld-link.exe
       CARGO_TARGET_AARCH64_PC_WINDOWS_MSVC_LINKER: lld-link.exe
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Setup Rust toolchain
         run: rustup toolchain install stable --profile minimal --target ${{ matrix.target }}
@@ -124,7 +124,7 @@ jobs:
     container:
       image: docker://ghcr.io/rust-cross/${{ matrix.image }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Add musl target
         run: rustup target add ${{ matrix.target }}
@@ -206,7 +206,7 @@ jobs:
           echo "Generated on: $(date -u +"%Y-%m-%d %H:%M") UTC" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - uses: actions/download-artifact@v5
         with:
