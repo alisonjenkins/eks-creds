@@ -35,4 +35,4 @@ tokio = { version = "1", features = [ "io-std", "macros", "net", "rt", "test-uti
 [dev-dependencies]
 test-log = "0.2.13"
 env_logger = "*"
-reqwest = "0.12.5"
+reqwest = "0.13.0"
